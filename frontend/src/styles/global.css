@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #10b981;
+  --background-color: #f9fafb;
+  --text-color: #1f2937;
+  --light-text-color: #6b7280;
+  --border-color: #e5e7eb;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --info-color: #3b82f6;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a5a5a5;
+}
+
+/* Console styling */
+.agent-console {
+  background-color: #1a1a1a;
+  color: #f9f9f9;
+  font-family: 'Fira Code', monospace;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.agent-console-content {
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.console-log-entry {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.console-log-time {
+  color: #888;
+  margin-right: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.console-log-icon {
+  margin-right: 0.5rem;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.console-log-message {
+  flex: 1;
+  word-break: break-word;
+}
+
+.console-log-success {
+  color: var(--success-color);
+}
+
+.console-log-warning {
+  color: var(--warning-color);
+}
+
+.console-log-error {
+  color: var(--error-color);
+}
+
+.console-log-info {
+  color: var(--info-color);
+}
+
+/* Browser simulation styling */
+.browser-simulation {
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.browser-controls {
+  background-color: #f1f3f5;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.browser-button {
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 0.25rem;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.browser-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.url-bar {
+  flex: 1;
+  margin: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.url-bar-icon {
+  color: #6b7280;
+  margin-right: 0.25rem;
+}
+
+.url-bar-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.browser-content {
+  padding: 1rem;
+  min-height: 300px;
+}
+
+.browser-history {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f9fafb;
+  border-top: 1px solid var(--border-color);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.history-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.history-item {
+  font-size: 0.75rem;
+  color: #6b7280;
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-time {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+}
+
+.history-url {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Animation utilities */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Utility classes */
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.glass-effect {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Store-specific colors */
+.store-walmart {
+  color: #0071ce;
+}
+
+.store-amazon {
+  color: #ff9900;
+}
+
+.store-target {
+  color: #cc0000;
+}
+
+.store-kroger {
+  color: #004990;
+}
+
+.store-costco {
+  color: #005daa;
+}
+
+.store-whole-foods {
+  color: #3c9a15;
+}
+
+.store-trader-joes {
+  color: #b22222;
+}
+
+.store-safeway {
+  color: #dc143c;
+}
+
+.store-publix {
+  color: #007a3d;
+}
+
+.store-aldi {
+  color: #1c54a3;
+}
