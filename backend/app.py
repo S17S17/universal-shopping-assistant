@@ -588,4 +588,4 @@ if __name__ == '__main__':
         init_thread.start()
     
     # Start the Socket.IO server
-    socketio.run(app, debug=True, use_reloader=True, allow_unsafe_werkzeug=True)
+    socketio.run(app, debug=True, use_reloader=True)
