@@ -10,7 +10,7 @@ import re
 from typing import Dict, List, Any, Optional, Tuple
 
 from crewai import Crew
-from langchain_openai import ChatOpenAI
+from .chat_model import ChatOpenAI
 
 from .agents import ShoppingAgents
 from .tasks import ShoppingTasks
