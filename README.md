@@ -1,79 +1,121 @@
 # Universal Shopping Assistant
 
-A comprehensive shopping assistant that handles grocery and non-grocery shopping with a Manus-like UI.
+A modern AI-powered shopping assistant application built with React, Flask, and CrewAI.
 
 ## Features
 
-- **Universal Shopping Assistant**: Handles both grocery and non-grocery queries
-- **Price Comparison**: Compare prices across multiple stores
-- **Product Recommendations**: Get personalized product recommendations
-- **Smart Shopping List**: Automatically generate shopping lists based on inventory
-- **Budget Optimization**: Optimize your shopping to stay within budget
-- **Dietary Preferences**: Filter products based on dietary preferences
-- **Travel Planning**: Get travel recommendations and compare prices
-- **Tech Product Research**: Compare specifications and prices for electronics
-- **Financial Advisory**: Get investment recommendations and financial advice
+- **Multi-Agent System**: Utilizes CrewAI to coordinate multiple specialized agents for better shopping recommendations
+- **Real-time Updates**: Get live feedback as the agents work on your shopping requests
+- **Versatile Shopping**: Handles groceries, tech products, travel bookings, and financial investments
+- **Beautiful UI**: Modern, responsive interface built with React and Tailwind CSS
 
-## UI Features
+## Project Structure
 
-- **Manus-like Interface**: A modern UI with a computer simulation showing the agent at work
-- **Real-Time Browser Simulation**: Watch the agent search and navigate websites
-- **Agent Console**: View real-time logs and activities
-- **Shopping Dashboard**: Track your shopping history and preferences
+The project consists of two main parts:
 
-## Technology Stack
-
-- **Backend**: Python, Flask, CrewAI, LangChain
-- **Frontend**: React, TailwindCSS
-- **Browser Automation**: browser-use library
-- **AI Models**: OpenAI GPT-4o
+- **Frontend**: React application with modern UI components
+- **Backend**: Flask server with CrewAI agents
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.8+
-- Node.js 14+
-- OpenAI API key
+- Node.js (v14+)
+- Python (v3.8+)
+- npm or yarn
 
-### Installation
+### Backend Setup
 
-1. Clone the repository
-```bash
-git clone https://github.com/S17S17/universal-shopping-assistant.git
-cd universal-shopping-assistant
-```
+1. Navigate to the backend directory:
+   ```
+   cd backend
+   ```
 
-2. Set up the backend
-```bash
-cd backend
-pip install -r requirements.txt
-cp .env.example .env  # Edit this file to add your API keys
-```
+2. Create a virtual environment:
+   ```
+   python -m venv venv
+   ```
 
-3. Set up the frontend
-```bash
-cd ../frontend
-npm install
-cp .env.example .env  # Edit this file if needed
-```
+3. Activate the virtual environment:
+   - Windows:
+     ```
+     venv\Scripts\activate
+     ```
+   - macOS/Linux:
+     ```
+     source venv/bin/activate
+     ```
 
-### Running the Application
+4. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
 
-1. Start the backend server
-```bash
-cd backend
-python app.py
-```
+5. Create a `.env` file based on the `.env.example` template:
+   ```
+   cp .env.example .env
+   ```
 
-2. Start the frontend server
-```bash
-cd ../frontend
-npm start
-```
+6. Update the `.env` file with your OpenAI API key
 
-3. Open your browser and navigate to http://localhost:3000
+7. Start the backend server:
+   ```
+   python app.py
+   ```
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+   ```
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Start the development server:
+   ```
+   npm start
+   ```
+
+## Usage
+
+1. Open your browser and go to `http://localhost:3000`
+2. Type a shopping query in the input field (e.g., "I need groceries for a vegan dinner party")
+3. Watch the agents work in real-time to generate your shopping list
+4. View and manage your shopping list with the provided tools
+
+## CrewAI Agents
+
+The system uses several specialized agents:
+
+- **Inventory Agent**: Analyzes current inventory and identifies needed items
+- **Dietary Agent**: Filters items based on dietary preferences
+- **Budget Agent**: Optimizes shopping lists based on budget constraints
+- **Price Comparison Agent**: Finds the best prices across different stores
+- **Browser Agent**: Simulates browsing different stores
+- **Tech Product Agent**: Researches and recommends tech products
+- **Travel Agent**: Researches and plans travel itineraries
+- **Finance Agent**: Provides financial investment advice
 
 ## License
 
-[MIT](LICENSE)
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- [CrewAI](https://github.com/joaomdmoura/crewAI) - Framework for orchestrating role-playing agents
+- [React](https://reactjs.org/) - Frontend library
+- [Flask](https://flask.palletsprojects.com/) - Backend framework
+- [OpenAI](https://openai.com/) - AI models
+
+## Troubleshooting
+
+### Common Issues:
+
+1. **OpenAI API Key**: Ensure your API key is correctly set in the `.env` file
+2. **CORS Issues**: The backend includes CORS handling, but if you encounter issues, ensure the frontend proxy is correctly set
+3. **Dependencies**: If you encounter module errors, try reinstalling dependencies with `pip install -r requirements.txt`
+4. **Socket Connection**: If real-time updates aren't working, check that both frontend and backend servers are running
