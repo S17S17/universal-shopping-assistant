@@ -4,7 +4,8 @@ This module defines the specialized agents used in the CrewAI-based system.
 """
 
 from crewai import Agent
-from langchain_openai import ChatOpenAI
+# Use our local implementation instead of langchain_openai
+from .chat_model import ChatOpenAI
 from typing import Dict, Any, Optional
 
 class ShoppingAgents:
